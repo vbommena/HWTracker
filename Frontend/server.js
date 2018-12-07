@@ -28,7 +28,7 @@ function getUserInformation(){
   return client.query(queri).then((res) =>{
        return res;
   })
-  .catch(console.error("error"))
+  .catch(console.error("error get user information"))
 }
 
 app.get("/list", function(req, res1){

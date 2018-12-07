@@ -15,8 +15,13 @@ def removeHW():
         user = "vbommena1"
         collegeN = (user, hwName, )
         curs.execute("DELETE FROM %s WHERE hwName = %s", collegeN)
+        curs1 = con.cursor()
+        curs1.execute("SELECT * FROM %s", (user, ))
+        for row in curs1:
+            print row
         con.commit()
         curs.close()
+        curs1.close
     finally:
         if con:
             con.close()
