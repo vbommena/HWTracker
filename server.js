@@ -108,15 +108,6 @@ app.post("/login",function(req,res){
     }
 })
 
-app.post("/login",function(req,res){
-    var homework = req.body.homework;
-    const del = "DELETE FROM " + user + "WHERE homework = '" + homework+"'";
-    client.query(del, (err, res) => {
-      if(err){
-        console.log("Homework does not exist verify");
-      }
-    })
-})
 
 function verify(username, password){
   const check = "SELECT * FROM login WHERE login.password = '" + password + "' AND login.username = '" + username +"'";
