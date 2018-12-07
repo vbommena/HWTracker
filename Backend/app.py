@@ -8,7 +8,7 @@ def removeHW():
     con = None
     try:
         print ("Endpoint reached")
-        conn_string = "host='ec2-174-129-41-12.compute-1.amazonaws.com' dbname='d5voje17q647tn' port='5432' user='atvungxynkajkc' password='42b9b99a8246ed64266e426afa1ddfe3288b5de68eab0f98bd96142b501e0a81'"
+        conn_string = "host='ec2-54-83-50-145.compute-1.amazonaws.com' dbname='dad8agdskdaqda' port='5432' user='bxzszdjesssvjx' password='30a8521fc6b32229540335c47af5265bb684216e4f58fa81520a91e1d086a5de'"
         con = psycopg2.connect(conn_string)
         curs = con.cursor()
         hwName = request.form["hwName"]
