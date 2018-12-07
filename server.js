@@ -7,11 +7,11 @@ var server = require('http').Server(app);
 var user = "";
 app.set('view engine', 'ejs');
 var client = new pg.Client({
-    user: "qveqzbflymzrlh",
-    password: "6aedd8225d71acc73d3bb619bfaf15a92d6c4ba3a978afac6602207b22a15d13",
-    database: "dcff7b1rei2d3l",
+    user: "esijiopzwrpisz",
+    password: "0e12254844a007713161373b426528ef20a87be02da9da4cb641d1242767133d",
+    database: "db1spps0dlvmqh",
     port: 5432,
-    host: "ec2-54-163-240-54.compute-1.amazonaws.com",
+    host: "ec2-54-197-234-33.compute-1.amazonaws.com",
 });
 client.connect();
 
