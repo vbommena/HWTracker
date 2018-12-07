@@ -15,6 +15,16 @@ var client = new pg.Client({
 });
 client.connect();
 
+
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static('client/build'));
+}
+
+app.get('*', (request, response) => {
+	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
+
 app.use(express.static(__dirname));
 app.get("/",function(req,res){
   res.render("index");
