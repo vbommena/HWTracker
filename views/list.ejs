@@ -75,12 +75,9 @@
       xhr.open("POST", "/removeHW", true);
       xhr.setRequestHeader('Content-Type', 'application/json');
       xhr.send(JSON.stringify({
-        "HW" : "CS 252 2"
+        "hwName" : "CS 252 2"
       }));
-
-      xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-      xmlHttp.send( null );
-      return xmlHttp.responseText;
+      
     };
   }
 

@@ -48,6 +48,7 @@ app.get("/list", function(req, res1){
 
 app.post("/removeHW", function(req, res1) {
   var name = req.body.hwName;
+  console.log("CALLED END POINT")
   const check = "DELETE FROM " + user + " WHERE homework = " + name;
   client.query(check, (err, res) => {
     if(err){
