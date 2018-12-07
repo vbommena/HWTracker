@@ -140,8 +140,8 @@ app.post('/signup',function(req,res1){
             console.log("QUERY1 SUCCESS!!")
           }
         })
-        const text = ("CREATE login (username text, password text, fullname text)");
-        client.query(text,(err, res) => {
+        const text_2 = ("CREATE login (username text, password text, fullname text)");
+        client.query(text_2,(err, res) => {
           if (err) {
             console.log("ERROR IN QUERY2!!");
           } else {
