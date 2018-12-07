@@ -14,11 +14,15 @@ def removeHW():
         hwName = request.form["hwName"]
         user = "vbommena1"
         collegeN = (user, hwName, )
+        print (collegeN)
         curs.execute("DELETE FROM %s WHERE hwName = %s", collegeN)
         curs1 = con.cursor()
+        print (user)
         curs1.execute("SELECT * FROM %s", (user, ))
+        result = []
         for row in curs1:
-            print row
+            result.append(row)
+        print (result)
         con.commit()
         curs.close()
         curs1.close
