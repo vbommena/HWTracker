@@ -140,12 +140,20 @@ app.post('/signup',function(req,res1){
             console.log("QUERY1 SUCCESS!!")
           }
         })
-        const text_1 = ("INSERT INTO login VALUES ('" + username + "', '" + password + "', '" + name + "', '" + email + "')");
-        client.query(text_1,(err, res) => {
+        const text = ("CREATE login (username text, password text, fullname text)");
+        client.query(text,(err, res) => {
           if (err) {
             console.log("ERROR IN QUERY2!!");
           } else {
             console.log("QUERY2 SUCCESS!!")
+          }
+        })
+        const text_1 = ("INSERT INTO login VALUES ('" + username + "', '" + password + "', '" + name + "', '" + email + "')");
+        client.query(text_1,(err, res) => {
+          if (err) {
+            console.log("ERROR IN QUERY3!!");
+          } else {
+            console.log("QUERY3 SUCCESS!!")
           }
         })
         res1.redirect("lists");
