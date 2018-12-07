@@ -46,6 +46,19 @@ app.get("/list", function(req, res1){
   })
 })
 
+app.post("/removeHW", function(req, res1) {
+  var name = req.body.hwName;
+  const check = "DELETE FROM " + user + " WHERE homework = " + name;
+  client.query(check, (err, res) => {
+    if(err){
+      console.log("User does not exist " + user);
+    } else {
+        res1.redirect("list");
+    }
+  })
+
+})
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.post("/addHW", function(req, res1){
   var today = new Date();
@@ -71,18 +84,7 @@ app.post("/addHW", function(req, res1){
 })
 
 
-app.post("/removeHW", function(req, res1) {
-  var name = req.body.hwName;
-  const check = "DELETE FROM " + user + " WHERE homework = " + name;
-  client.query(check, (err, res) => {
-    if(err){
-      console.log("User does not exist " + user);
-    } else {
-        res1.redirect("list");
-    }
-  })
 
-})
 
 app.get("/lists", function(req, res1){
   var arrs = [];
