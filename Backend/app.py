@@ -12,8 +12,6 @@ def removeHW():
         con = psycopg2.connect(conn_string)
         curs = con.cursor()
         hwName = request.form["hwName"]
-        user = text['user']
-        hwName = text['hwName']
         collegeN = (user, hwName, )
         curs.execute("DELETE FROM %s WHERE hwName = %s", collegeN)
         con.commit()
