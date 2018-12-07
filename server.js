@@ -22,7 +22,7 @@ app.get("/",function(req,res){
 
 function getUserInformation(){
   console.log(user);
-  const queri = "SELECT * FROM " + user + " ORDER BY days_remaining ASC, difficulty ASC";
+  const queri = "SELECT * FROM " + user + " ORDER BY days_remaining ASC";
   var result = [];
   return client.query(queri).then((res) =>{
        return res;
