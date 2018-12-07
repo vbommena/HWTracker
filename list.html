@@ -42,9 +42,10 @@
     close[i].onclick = function() {
       var div = this.parentElement;
       div.style.display = "none";
+      console.log(myNodelist.childNodes[i]);
       myNodelist.removeChild(myNodelist.childNodes[i])
-      const nodelistToArray = Array.apply(null, myNodelist);
     }
+
   }
   // Add a "checked" symbol when clicking on a list item
   var list = document.querySelector('ul');
