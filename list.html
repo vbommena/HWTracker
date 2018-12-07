@@ -15,11 +15,21 @@
     </div>
     <ul id="dynamic-list"></ul>
     <form action="/list" method="GET">
-      <div id="myDIV" class="header">
-        <h2>My To Do List</h2>
-        <input type="text" id="myInput" placeholder="Title...">
-      </div>
+      <select id="mySelect" size="4">
+        <option>Apple</option>
+        <option>Pear</option>
+        <option>Banana</option>
+        <option>Orange</option>
+      </select>
     </form>
+    <button onclick="myFunction()">Remove selected Homework</button>
+
+    <script>
+      function myFunction() {
+          var x = document.getElementById("mySelect");
+          x.remove(x.selectedIndex);
+      }
+  </script>
   </body>
 </html>
 <script>
