@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="tabs.css">
+    <link rel="stylesheet" href="list.css">
+    <h1 align="center">TO-DO LIST</h1>
+    <p align="center">Find your list of homwork here.</p>
+  </head>
+  <body>
+    <div class="tab">
+      <button class="tablinks" id="defaultOpen">Homework List</button>
+      <a href="addhw.html"><button class="tablinks" >Add Homework</button></a>
+    </div>
+      <form action="/list" method="GET">
+        <div id="myDIV" class="header">
+          <h2>My To Do List</h2>
+        </div>
+        <ul id="myUL">
+          <% arrs.forEach(function(item){ %>
+              <li><%= item %></li>
+          <% }); %>
+        </ul>
+    </form>
+      <button id="myBtn">Sign Out</button>
+      <div id="myModal" class="modal">
+      <div class="modal-content">
+      <a href="index.html"><span class="closeModal">&times;</span></a>
+      <p>Good Luck!! :D</p>
+    <script>
+      var modal = document.getElementById('myModal');
+      var btn = document.getElementById("myBtn");
+      var span = document.getElementsByClassName("closeModal")[0];
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+      }
+    </script>
+  </div>
+
+</div>
+  </body>
+</html>
+<script>
+  document.getElementById("defaultOpen").click();
+</script>
+<script>
+  // Create a "close" button and append it to each list item
+  var myNodelist = document.getElementsByTagName("LI");
+  var i;
+  for (i = 0; i < myNodelist.length; i++) {
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    myNodelist[i].appendChild(span);
+  }
+
+  // Click on a close button to hide the current list item
+  var close = document.getElementsByClassName("close");
+  var i;
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+
+  // Add a "checked" symbol when clicking on a list item
+  var list = document.querySelector('ul');
+  list.addEventListener('click', function(ev) {
+    if (ev.target.tagName === 'LI') {
+      ev.target.classList.toggle('checked');
+    }
+  }, false);
+</script>
