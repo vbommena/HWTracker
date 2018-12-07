@@ -13,25 +13,44 @@
       <a href="addhw.html"><button class="tablinks" >Add Homework</button></a>
       <a href="aboutMe.html"><button class="tablinks" >About Me</button></a>
     </div>
-    <ul id="dynamic-list"></ul>
     <form action="/list" method="GET">
-      <select id="mySelect" size="4">
-        <option>Apple</option>
-        <option>Pear</option>
-        <option>Banana</option>
-        <option>Orange</option>
-      </select>
+      <div id="myDIV" class="header">
+        <h2>My To Do List</h2>
+        <input type="text" id="myInput" placeholder="Title...">
+      </div>
     </form>
-    <button onclick="myFunction()">Remove selected Homework</button>
-
-    <script>
-      function myFunction() {
-          var x = document.getElementById("mySelect");
-          x.remove(x.selectedIndex);
-      }
-  </script>
   </body>
 </html>
 <script>
   document.getElementById("defaultOpen").click();
+</script>
+<script>
+  // Create a "close" button and append it to each list item
+  var myNodelist = document.getElementsByTagName("LI");
+  var i;
+  for (i = 0; i < myNodelist.length; i++) {
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    myNodelist[i].appendChild(span);
+  }
+  // Click on a close button to hide the current list item
+  var close = document.getElementsByClassName("close");
+  var i;
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+      myNodelist.removeChild(myNodelist.childNodes[i])
+      const nodelistToArray = Array.apply(null, myNodelist);
+    }
+  }
+  // Add a "checked" symbol when clicking on a list item
+  var list = document.querySelector('ul');
+  list.addEventListener('click', function(ev) {
+    if (ev.target.tagName === 'LI') {
+      ev.target.classList.toggle('checked');
+    }
+  }, false);
 </script>
