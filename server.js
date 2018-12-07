@@ -56,7 +56,6 @@ app.post("/removeHW", function(req, res1) {
         res1.redirect("list");
     }
   })
-
 })
 
 app.use(bodyParser.urlencoded({ extended: true }));

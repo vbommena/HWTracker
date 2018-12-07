@@ -59,7 +59,7 @@
   for (i = 0; i < myNodelist.length; i++) {
     var span = document.createElement("SPAN");
     var txt = document.createTextNode("\u00D7");
-    // span.className = "close";
+    span.className = "close";
     span.appendChild(txt);
     myNodelist[i].appendChild(span);
   }
@@ -71,7 +71,16 @@
     close[i].onclick = function() {
       var div = this.parentElement;
       div.style.display = "none";
-      console.log();
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "/removeHW", true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify({
+        "HW" : "CS 252 2"
+      }));
+
+      xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+      xmlHttp.send( null );
+      return xmlHttp.responseText;
     };
   }
 
