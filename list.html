@@ -13,12 +13,12 @@
       <a href="addhw.html"><button class="tablinks" >Add Homework</button></a>
       <a href="aboutMe.html"><button class="tablinks" >About Me</button></a>
     </div>
-      <form action="/list" method="GET">
-        <div id="myDIV" class="header">
-  <h2>My To Do List</h2>
-  <input type="text" id="myInput" placeholder="Title...">
-  <span onclick="newElement()" class="addBtn">Add</span>
-</div>
+    <form action="/list" method="GET">
+      <div id="myDIV" class="header">
+        <h2>My To Do List</h2>
+        <input type="text" id="myInput" placeholder="Title...">
+        <span onclick="newElement()" class="addBtn">Add</span>
+      </div>
     </form>
   </body>
 </html>
@@ -43,6 +43,9 @@
     close[i].onclick = function() {
       var div = this.parentElement;
       div.style.display = "none";
+      myNodelist.removeChild(myNodelist.childNodes[i])
+      const nodelistToArray = Array.apply(null, myNodelist);
+
     }
   }
   // Add a "checked" symbol when clicking on a list item
