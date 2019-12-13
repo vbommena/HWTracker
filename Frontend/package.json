@@ -194,7 +194,7 @@
       "resolved": "https://registry.npmjs.org/negotiator/-/negotiator-0.6.1.tgz",
       "version": "0.6.1"
     },
-    "npm": "^5.8.0",
+    "npm": "^6.13.4",
     "object-assign": {
       "integrity": "sha1-ejs9DpgGPUP0wD8uiubNUahog6A=",
       "resolved": "https://registry.npmjs.org/object-assign/-/object-assign-4.1.0.tgz",
